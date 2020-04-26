@@ -1,0 +1,32 @@
+<!--외부의 js파일을 이용해서 사용하기
+    외부 js파일을 사용할 때 js파일을 다운받을때 html파일의 로딩이 중단되기 떄문에
+    async : <script async src="js/script1.js"></script>, 여러개의 스크립트가 있을때에 다운의 순서가 보장할 수 없다
+            만약 여러개중 코드가 중복되면 에러발생 할 수 있음
+    defer : <script defer src="js/script2.js"></script>, 순서대로 다운로드 한 후 모든 스크립트와 내용이 다운로드 되었을 때 실행
+    를 사용해서 비동기로 돌려서 사용해주면 에러가 발생하지 않는다.
+    
+    만약 scirpt들이 각각의 스크립트에 의존하지 않고 독립적으로 파싱되도 상관없다면, async 를 사용합니다.
+    먄약 sciprt들이 의존하고 하나의 스크립트가 파싱될때까지 기다려야 한다면, defer 를 사용하고 각각의 <script> 태그들을 실행되길 원하는 순서대로 작성합니다.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Apply JavaScript example</title>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <button>Click me</button>
+  </body>
+  <!-- 인라인에 js적용하는 방법
+  <script>
+      const buttons = document.querySelectorAll('button');
+//모든 <button>태그를 List 형태로 buttons 변수에 저장한다.
+
+for (let i = 0; i < buttons.length ; i++) {
+  buttons[i].addEventListener('click', createParagraph);
+}
+//복수이기 때문에 for를 사용해 루프를 돌린다.
+  </script>
+  -->
+</html>
