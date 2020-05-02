@@ -1,0 +1,4 @@
+{
+    "name" : "ji",
+    "favorites" : ["apple", "orange"]
+}
